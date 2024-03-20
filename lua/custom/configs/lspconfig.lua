@@ -4,14 +4,7 @@ local capabilities = base.capabilities
 
 local lspconfig = require "lspconfig"
 
-local servers = { "eslint", "pyright", "jdtls", "omnisharp" }
-
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-end
+local servers = { "eslint", "tailwindcss", "pyright", "jdtls", "omnisharp" }
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
@@ -53,3 +46,10 @@ lspconfig.gopls.setup {
     },
   },
 }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
