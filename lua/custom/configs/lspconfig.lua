@@ -4,7 +4,7 @@ local capabilities = base.capabilities
 
 local lspconfig = require "lspconfig"
 
-local servers = { "eslint", "tailwindcss", "pyright", "jdtls", "omnisharp" }
+local servers = { "intelephense", "eslint", "pyright", "jdtls", "omnisharp" }
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
